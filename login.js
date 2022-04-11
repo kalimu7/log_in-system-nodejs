@@ -6,11 +6,18 @@ const { append } = require('express/lib/response');
 const bodyParser = require('body-parser');
 const encoder  = bodyParser.urlencoded(); 
 
+
 //express setting port.
 const server = express();
 server.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/index.html');
-})
+    res.render('index');
+});
+
+
+//set views
+server.set('views','./views');
+server.set('view engine','ejs');
+
 
 
 server.post('/',encoder,function(req,res){
@@ -29,11 +36,14 @@ server.post('/',encoder,function(req,res){
 
 //when log in is success the welcome page;
 server.get('/welcome',(req,res)=>{
-    res.sendFile(__dirname + '/welcome.html');
+    res.render('welcome');
 })
 
 //setting styles
-server.use('/assets',express.static('assets'));
+server.use(express.static('Public'));
+server.use('/CSS',express.static('/CSS'));
+server.use('/Img',express.static('/Img'));
+
 
 
  

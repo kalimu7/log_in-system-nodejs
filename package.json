@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node login.js",
+    "start": "node login.js",
     "dev": "nodemon login.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15"
